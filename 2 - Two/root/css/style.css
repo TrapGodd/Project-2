@@ -1,0 +1,108 @@
+:root {
+  --width: 50px;
+  --height: calc(var(--width) / 2);
+  --border-radius: var(--height);
+  --primary-clr: rgb(120, 86, 219);
+  --secondary-clr: grey;
+}
+
+.container {
+  background-color: rgb(217, 211, 232);
+  height: 30rem;
+  width: 55rem;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-fill {
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background-color: var(--primary-clr);
+  cursor: pointer;
+  transition: background 300ms;
+}
+
+.toggle-input:checked ~ .toggle-fill {
+  background: yellow;
+}
+
+.toggle-fill::after {
+  content: "";
+
+  width: var(--height);
+  height: var(--height);
+  border-radius: var(--border-radius);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: white;
+}
+
+.toggle-input:checked ~ .toggle-fill::after {
+  transform: translateX(var(--height));
+  transition: 300ms ease-in;
+}
+
+.toggle-container,
+header,
+.cards {
+  display: flex;
+  justify-content: center;
+}
+
+.cards {
+  margin-top: 2rem;
+}
+
+.card {
+  padding: 0rem 3rem 1rem 3rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px;
+}
+
+section {
+  font-size: 0.7rem;
+}
+
+.card--one {
+  background-color: white;
+}
+
+.card--two {
+  background-color: rgb(120, 86, 219);
+}
+
+.card--three {
+  background-color: white;
+}
+
+.learn-more {
+  border-radius: 5px;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+}
+
+.learn-more--1 {
+  background-color: rgb(120, 86, 219);
+}
+
+.learn-more--2 {
+  background-color: white;
+}
+
+.learn-more--3 {
+  background-color: rgb(120, 86, 219);
+}
